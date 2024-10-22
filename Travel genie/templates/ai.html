@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+  <H2>Travelgenie</H2>
+    <div class="btn-toolbar">
+        <button class="btn btn-primary">HOME</button>
+        <button class="btn" id="savePdfButton">Export</button>
+    </div>
+    <div class="well">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>day</th>
+              <th>time</th>
+              <th>description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for respon in resp %}
+            {% for acti in respon['activities'] %}
+            <tr>
+              <td>{{respon['day']}}</td>
+              <td>{{acti['time']}}</td>
+              <td>{{acti['description']}}</td>
+            </tr>
+            {% endfor %}
+            {% endfor %}
+          </tbody>
+        </table>
+    </div>
+    {% for i in range(5) %}
+    <img src={{imgs[i].url}}>
+    {% endfor %}
+    <div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Delete Confirmation</h3>
+        </div>
+        <div class="modal-body">
+            <p class="error-text">Are you sure you want to delete the user?</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+            <button class="btn btn-danger" data-dismiss="modal">Delete</button>
+        </div>
+    </div>
+    <script>
+      // Function to handle button click
+      function saveAsPdf() {
+        window.print();
+      }
+  
+      // Get the button element by its ID
+      var saveButton = document.getElementById('savePdfButton');
+  
+      // Attach the click event listener to the button
+      saveButton.addEventListener('click', saveAsPdf);
+    </script>
+</body>
+</html>

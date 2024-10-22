@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      
+        <title>Travel Genie</title>
+        <link rel="stylesheet" href="../static/css/home.css" type="text/css">
+        <style>
+            h4 {
+              margin-bottom: 20px;
+            }
+            fieldset {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+
+  }
+
+  legend {
+    font-weight: bold;
+  }
+        </style>
+    </head>
+    <body style="background-image: url('static/images/bg.png'); background-size: cover;  background-repeat: no-repeat;">
+      <div style="background-color: black; opacity: 0.5; position: absolute; width: 100%; height: 100%; z-index: -7;"></div>
+
+      <nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <a href="#">TRAVEL GENIE</a>
+            </div>
+            <div id="mainListDiv" class="main_list" >
+                <ul class="navlinks" >
+                    <li><a href="/about" style="font-size: large;">About</a></li>
+                    <li><a href="/contact" style="font-size: large;">Contact</a></li>
+                    <li><a href="/logout" style="font-size: large;">Logout</a></li>
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br><br>
+        <div class="image-container">
+        <img src='';>
+        
+        <a style="font-size: 69px;">ORGANISE YOUR ADVENTURE</a>
+        <br>
+        <h4>Start exploring our website and let your imagination take flight! so we need to know a little about you and your trip</h4>
+        <h3>Complete these details about your trip</h3>
+<form class="transparent-form" method="post" action="/ai">   
+  <h4>Destination</h4>
+    <fieldset>
+        <legend></legend>
+        <input type="text" id="destination" name="place">
+        
+    </fieldset>
+    <br>
+<h4>Number of days</h4>
+  <fieldset>
+    <input type="number" id="number of days" name="days">
+    <legend></legend>
+</fieldset>
+<br>
+<br>
+  <button type="submit" class = "enlarged-button">Get my trip plan</button>
+     
+</form>
+<script src="/static/js/home.js">
+
+</script>
+    </body>
+</html>
